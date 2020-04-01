@@ -26,11 +26,5 @@ namespace MessageBoardAPI.Controllers
       _db.Groups.Add(group);
       _db.SaveChanges();
     }
-
-    [HttpGet("{id}")]
-    public ActionResult<Group> Get(int id)
-    {
-      return _db.Groups.FirstOrDefault(entry => entry.GroupId == id);
-    }
   }
 }
