@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MessageBoardAPI.Models
 {
@@ -7,6 +8,6 @@ namespace MessageBoardAPI.Models
     public int MessageId { get; set; }
     public string Description { get; set; }
     public int GroupId { get; set; }
-    public virtual Group Group { get; set; }
+    public virtual Group Group { get; set;}
   }
 }
