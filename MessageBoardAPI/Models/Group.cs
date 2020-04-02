@@ -7,6 +7,6 @@ namespace MessageBoardAPI.Models
   {
    public int GroupId { get; set; }
    public string Topic { get; set; }
-   public virtual ICollection<Message> Messages { get; }
+   public virtual ICollection<Message> Messages { get; set; }
   }
 }

@@ -2,14 +2,16 @@
 using MessageBoardAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MessageBoardAPI.Migrations
 {
     [DbContext(typeof(MessageBoardAPIContext))]
-    partial class MessageBoardAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20200402172655_seed1")]
+    partial class seed1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
