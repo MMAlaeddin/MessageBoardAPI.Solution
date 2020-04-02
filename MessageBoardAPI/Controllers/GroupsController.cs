@@ -29,9 +29,20 @@ namespace MessageBoardAPI.Controllers
       _db.SaveChanges();
     }
     [HttpGet]
-    public ActionResult<IEnumerable<Group>> Get()
+    public ActionResult<IEnumerable<Group>> Get(int groupId, string topic)
     {
-      return _db.Groups.ToList();
+      var query = _db.Groups.AsQueryable();
+
+      if (topic != null)
+      {
+        // query = query.Where(entry => entry.Topic == topic);
+        query = query.Where(entry => entry.Topic.Contains(topic));
+      }
+      if (groupId != 0)
+      {
+        query = query.Where(entry => entry.GroupId == groupId);
+      }  
+    return query.ToList();
     }
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Group group)
